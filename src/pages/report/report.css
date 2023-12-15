@@ -1,0 +1,200 @@
+.date-title {
+	color: var(--col-text);
+	font-size: 18px;
+	padding-left: 8px;
+	position: sticky;
+	left: 0;
+}
+.location {
+	white-space: nowrap;
+	box-sizing: border-box;
+	margin: 0 50vw 32px 16px;
+	display: inline-block;
+}
+.location__name {
+	font-size: 16px;
+	color: var(--col-text);
+	text-align: left;
+	position: sticky;
+	left: 8px;
+	margin-left: 8px;
+	margin-bottom: 4px;
+	display: block;
+}
+.location__start-time {
+	display: block;
+	color: var(--col-downtime-text);
+	margin-left: 16px;
+	opacity: 1;
+	font-weight: 200;
+	border-left: 4px solid var(--col-downtime);
+	position: sticky;
+	left: 16px;
+	padding: 4px 0 4px 6px;
+}
+.log {
+	padding: 4px 8px;
+	overflow: hidden;
+	background-color: inherit;
+	cursor: pointer;
+	box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+	z-index: 2;
+	display: inline-block;
+	position: relative;
+	height: var(--encounter-height);
+	transition: all 0.2s;
+	vertical-align: top;
+}
+.log:hover {
+	margin-bottom: -8px;
+	height: calc(var(--encounter-height) + 8px);
+}
+.log.--hidden {
+	width: 0 !important;
+	border: 0 !important;
+	padding: 0 !important;
+	pointer-events: none;
+}
+.log__text {
+	display: block;
+	color: inherit;
+	white-space: pre;
+	position: absolute;
+	width: calc(100% - 16px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.--6 .log__text {
+	color: #212121;
+}
+.log__name {
+	font-size: 13px;
+	bottom: 6px;
+	left: 8px;
+}
+.log__time {
+	font-size: 12px;
+	text-align: right;
+	top: 6px;
+	left: 8px;
+}
+.log__split {
+	text-align: right;
+	top: 20px;
+	font-size: 12px;
+	opacity: 0.75;
+}
+.--downtime {
+	background-color: var(--col-downtime) !important;
+	box-shadow: none !important;
+	z-index: 1;
+	cursor: default;
+	height: calc(var(--encounter-height) - 4px);
+	margin-bottom: 4px;
+}
+.--downtime:hover {
+	height: calc(var(--encounter-height) - 4px);
+	margin-bottom: 4px;
+}
+.--downtime .log__text	{
+	color: var(--col-downtime-text) !important;
+}
+.--wipe {
+	border: 4px solid #f44336;
+	padding: 0 4px;
+}
+.--wipe .log__name {
+	bottom: 2px;
+	left: 4px;
+}
+.--wipe .log__time {
+	right: 4px;
+	top: 2px;
+}
+.--col-location__1 > .log {
+	background: var(--col-location__1);
+	color: white;
+}
+.--col-location__2 > .log {
+	background: var(--col-location__2);
+	color: white;
+}
+.--col-location__3 > .log {
+	background: var(--col-location__3);
+	color: white;
+}
+.--col-location__4 > .log {
+	background: var(--col-location__4);
+	color: white;
+}
+.--col-location__5 > .log {
+	background: var(--col-location__5);
+	color: #212121;
+}
+.--col-location__6 > .log {
+	background: var(--col-location__6);
+	color: #212121;
+}
+.--col-location__7 > .log {
+	background: var(--col-location__7);
+	color: #212121;
+}
+.--col-location__8 > .log {
+	background: var(--col-location__8);
+	color: white;
+}
+.--col-location__9 > .log {
+	background: var(--col-location__9);
+	color: white;
+}
+#summary {
+	position: sticky;
+	left: 0;
+	width: 100%;
+	display: block;
+	padding: 1px 16px;
+	margin-bottom: 24px;
+	background: var(--col-bg);
+	color: var(--col-text);
+	z-index: 3;
+	box-shadow: 0 4px 10px 1px rgba(0,0,0,0.15);
+}
+#settings {
+	z-index: 4;
+	position: absolute;
+	background: var(--col-text);
+	color: var(--col-bg);
+	padding: 8px 16px 8px 32px;
+	box-shadow: 0 0 8px 4px rgba(0,0,0,0.3);
+	border-radius: 4px;
+	top: 8px;
+	transition: all 0.3s;
+	text-align: right;
+}
+#settings > * {
+	display: block;
+}
+.tooltip {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #FFFFFFDD;
+	padding: 4px 8px;
+	border-radius: 4px;
+	z-index: 99;
+	box-shadow: 0 0 4px 1px rgba(0,0,0,0.3);
+	pointer-events: none;
+}
+#tooltip__time {
+	display: block;
+	width: 100%;
+	text-align: right;
+}
+#tooltip__label {
+	width: 100%;
+	display: block;
+	margin-top: 4px;
+}
+#location-summary table tr td:last-child {
+	padding-left: 16px;
+}
