@@ -1,42 +1,87 @@
+:root {
+  --encounter-height: 75px;
+  --col-bg: rgb(25, 40, 65);
+  --col-text: rgb(255, 255, 255);
+  --col-scroll: rgba(255, 255, 255, 0.13);
+  --col-downtime: rgba(255, 255, 255, 0.07);
+  --col-downtime-text: rgba(255, 255, 255, 0.53);
+  --col-location__1: rgb(186, 104, 200);
+  --col-location__2: rgb(92, 107, 192);
+  --col-location__3: rgb(3, 169, 244);
+  --col-location__4: rgb(0, 150, 136);
+  --col-location__5: rgb(139, 195, 74);
+  --col-location__6: rgb(255, 235, 59);
+  --col-location__7: rgb(255, 152, 0);
+  --col-location__8: rgb(84, 110, 122);
+  --col-location__9: rgb(97, 97, 97);
+  --col-title: rgb(33, 33, 33);
+}
+* {
+  font-family: monospace;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: var(--col-scroll) var(--col-bg);
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-corner {
+  background: var(--col-bg);
+}
+*::-webkit-scrollbar-track {
+  background: var(--col-bg);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--col-scroll);
+  border-radius: 10px;
+}
+html {
+  width: 100vw;
+  overflow: hidden;
+}
+body {
+  background: var(--col-bg);
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 36px 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.title-bar {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  height: 36px;
+  background: var(--col-title);
+  color: var(--col-text);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.title-bar__hamburger {
+  padding: 8px;
+  margin-left: 8px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title-bar__text {
+  line-height: 36px;
+  padding-left: 8px;
+  font-size: 18px;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-bar__cog {
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 8px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.content-body {
+  grid-area: 2 / 1 / 3 / 2;
+  width: 100vw;
+  overflow: auto;
 }
